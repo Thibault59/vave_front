@@ -1,0 +1,134 @@
+
+
+.bar{                 /*PROGRESS BAR*/
+
+    margin-top: 5px;
+}
+
+
+.login{
+
+    background-image: url(../../pictures/sunset.jpg);
+}
+
+
+.registration{
+
+    background-image: url(../../pictures/sunset.jpg);
+}
+
+.comments{
+
+    background-image: url(../../pictures/grey.png);
+}
+
+h1,h3{
+
+    color: white;
+
+}
+
+
+h2{
+    text-align: left;
+    color:white;
+    font-family: Helvetica;
+
+}
+
+#canvas{
+
+    background-color: rgba(255,255,255, 0.3);
+
+    border-radius: 9px;
+    /* padding: 10px;*/
+    margin-left: 180px;
+}
+
+
+
+.jumbotron{
+
+    background-image: url("../../pictures/jumbo.jpg");
+    /* box-shadow: 2px 2px 4px black; */
+    background-size: 135%;
+    background-position:0px -50px;
+    padding: 0.5em 0.6em 0.5em 0.6em;
+}
+
+#text{                  /*Text VTADS description in index.html*/
+    color: white;
+
+    border-radius: 5px;
+    border-color: black;
+    background-image: url("../../pictures/crash.jpg");
+    background-size: 180%;
+    background-position: 35% 20%;
+    padding:5px 16px;
+    box-shadow: 2px 2px 4px black;
+
+
+}
+
+#text2{             /*Text VAVE/LASSENA description in index.html*/
+    color: white;
+
+    border-radius: 5px;
+    border-color: black;
+    background-image: url("../../pictures/data.jpg");
+    background-size: 180%;
+    background-position: 35% 20%;
+    padding:5px 16px;
+    box-shadow: 2px 2px 4px black;
+
+
+}
+
+hr {
+    border-color: white;
+    max-width: 900px;
+}
+
+
+
+
+
+body{              /*Background form.html*/
+    background-image: url("../../pictures/city.jpg");
+    background-attachment:fixed;
+    /* background-size: 140%;*/
+    background-position: 0% 0%;
+    background-size: cover;
+}
+
+
+
+
+
+footer{
+
+    margin-top: 180px;
+
+    border-color: black;
+}
+
+
+.image span {               /*Size max*/
+    visibility: hidden;
+    font-size: 85%;
+}
+
+.image img:hover + span {   /*display size max*/
+    visibility: visible;
+}
+
+.image{        /*size max image*/
+
+    margin-top: 0px;
+    margin-right: 17px;
+}
+
+
+
+
+

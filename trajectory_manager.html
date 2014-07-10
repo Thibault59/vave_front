@@ -1,0 +1,166 @@
+
+<!--For design reasons, I decided to "mix" the Bootstrap css v3.1.1 with the Booststrap css v2.3.2.
+ For instance, I used the v2.3.2 buttons, and the v3.1.1 navbar.
+
+So, the .css file you'll find in the Bootstrap-v3 folder is modified, don't loose it ! -->
+
+
+<! DOCTYPE html>
+<html>
+<head>
+    <title>Trajectory Manager</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="bootstrap-v3/css/bootstrap.css"/>
+    <link rel="stylesheet" href="formhelper/dist/css/bootstrap-formhelpers.css"/>
+    <link rel="stylesheet" href="CSS/stylesheets/styles.css"/>
+
+    <script type="text/javascript" src="formhelper/dist/js/bootstrap-formhelpers.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="bootstrap-v3/js/bootstrap.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+
+
+
+    </script>
+
+    <style type="text/css">
+    #map{width:400px;height:300px;}
+    </style>
+
+
+
+            <script>
+
+    $(document).ready(function(){
+
+        $("#create").click(function(){
+            $(".trajectory").fadeIn("slow");
+
+
+        });
+
+
+
+    });
+
+    </script>
+
+</head>
+<body class="index">
+<!--BARRE DE NAVIGATION-->
+
+
+
+
+
+<div class="container">
+    <nav class="navbar navbar-inverse">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-inner">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"  href="dashboard.html">Dashboard</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Trajectory manager</a></li>
+                <li><a href="connect.html">Connection to a car</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#">Multi-View</a></li>
+                <li><a href="form.html">Report</a></li>
+                <li><a href="#">3D simulation</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About VAVE<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="config.html">Configuration</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+
+    <div class="box">
+
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                Load a trajectory
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a  href="#">Trajectory #1</a></li>
+                <li role="presentation"><a  href="#">Trajectory #2</a></li>
+                <li role="presentation"><a  href="#">Trajectory #3</a></li>
+            </ul>
+            <button class="btn btn-default" id="create" >Create a trajectory</button>
+        </div> <br>
+
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="trajectory" style="display:none;">
+
+                    <form action="" method="get" name="direction" id="direction" >
+                        <label>Start :</label>
+                        <input type="text" name="origin" id="origin" value="">
+                        <label>End :</label>
+                        <input type="text" name="destination" id="destination" value="">
+                        <!-- <label>Waypoints :</label>
+                         <input type="text" name="waypoints" id="waypoints">-->
+
+                        <input type="button" value="Calculate" onclick="javascript:calculate()">
+                    </form>
+                </div>
+                <div id="map-canvas" style="float:left;width:115%; height:47%"></div>
+            </div>
+
+
+            <!--  <div class="col-lg-6" >
+
+             <div id="directionsPanel" style="float:right;width:80%;height 55%;display:none;"> </div>
+
+           </div>-->
+
+
+
+            <div class="col-md-6">
+
+                <p style="color:white;margin-left:10%;">Date: </p>
+                <p style="color:white;margin-left:10%;">Temperature: </p>
+                <p style="color:white;margin-left:10%;">Weather: </p>
+                <p style="color:white;margin-left:10%;margin-top:7%;">Total Distance: <span id="total"></span></p>
+                <p style="color:white;margin-left:10%;">Start time: </p>
+                <p style="color:white;margin-left:10%;">End time: </p>
+                <p style="color:white;margin-left:10%;">Fuel Consumption: </p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <iframe id="iframe" src="comments.html" height="51%" width="40%"  style=""> </iframe>
+
+
+    <script src="google_map.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<! DOCTYPE html>
+<html>
+<head>
+    <title>login</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="bootstrap-v3/css/bootstrap.css"/>
+    <link rel="stylesheet" href="form/src/css/bootstrapValidator.css"/>
+    <link rel="stylesheet" href="CSS/stylesheets/styles.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="form/dist/js/bootstrapValidator.js"></script>
+    <script type="text/javascript" src="form/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+    <script>
+        $(document).ready(function(){
+
+
+            $(".head").fadeIn();
+
+            $(".foot").fadeIn();
+
+            $(".hidden_row").fadeIn(1500)
+            /* setTimeout('$(".hidden_row").css({ "display": "block", "opacity": "0" }).animate({ "opacity": "1" }, 1000);', 800)*/
+
+        });
+
+    </script>
+
+
+</head>
+
+
+
+<body class="registration">
+
+
+<div class="container-fluid vcenter">
+
+
+    <div class="row" style="margin-top:5%;">
+
+        <img src="pictures/head.png" style=" box-shadow: 5px 5px 10px #383838;margin-left:34.6%;" class="img-responsive" alt="Responsive image">
+
+
+    </div>
+
+
+
+    <div class="row hidden_row" style="display:none;  margin-top:20px;" id="language">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="panel panel-sm panel-default" style="">
+                <div class="panel-heading"> <strong class="">User's informations</strong>
+
+                </div>
+                <div class="panel-body" >
+                    <form class="form-horizontal" role="form">
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Firstname</label>
+                            <div class="col-lg-4">
+                                <input  class="form-control" type="text" name="firstname" value="" placeholder=" " >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Lastname</label>
+                            <div class="col-lg-4">
+                                <input  class="form-control" type="text" name="lastname" value="" placeholder=" " >
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row hidden_row" style="display:none;" id="authentification">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="panel panel-default" style="">
+                <div class="panel-heading"> <strong class="">Authentification</strong>
+
+                </div>
+                <div class="panel-body" >
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="login" class="col-sm-3 control-label">Email</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="login" placeholder="" required="" type="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-7">
+                                <input class="form-control" id="inputPassword3" placeholder="" required="" type="password">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group last">
+                            <div class="col-sm-offset-3 col-sm-9">
+                                <button type="submit" class="btn btn-primary btn-sm" id="register">Register</button>
+                            </div>
+
+
+                        </div>
+
+                    </form>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <a href="http://profs.etsmtl.ca/rlandry/lassena/accueil.asp"> <img src="pictures/foot.png" class="img-responsive" style="box-shadow: 5px 5px 10px #383838;margin-left:34.6%;"></a>
+
+    </div>
+
+
+
+
+
+
+    <script src="form/validator.js"></script>
+</body>
+
+</html>

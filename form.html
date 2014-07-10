@@ -1,0 +1,370 @@
+<! DOCTYPE html>
+<html>
+
+<!--
+This is the page called "Report" on the navbar. Here the user have to enter some informations, and to upload the files containing the data, in order
+to generate a pdf report by clicking on the button "generate report".
+For security reasons I have implemented validation on this form, using bootstrapValidator.js You can find the corresponding javascript code in the folder form/validator.js
+-->
+
+<head>
+
+    <title>Report generation form</title>
+
+    <!--Integration of css and js files -->
+
+    <link rel="stylesheet" href="bootstrap-v3/css/bootstrap.css"/>
+    <link rel="stylesheet" href="form/src/css/bootstrapValidator.css"/>
+    <link rel="stylesheet" href="form/datepicker/css/datepicker.css"/>
+
+    <link rel="stylesheet" href="CSS/stylesheets/styles.css"/>
+
+    <script type="text/javascript" src="form/vendor/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="form/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="form/dist/js/bootstrapValidator.js"></script>
+    <script src="http://gregpike.net/demos/bootstrap-file-input/bootstrap.file-input.js.pagespeed.jm.IdmWcpRIii.js"></script>
+    <script type="text/javascript" src="form/datepicker/js/bootstrap-datepicker.js"></script>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $("#form").fadeIn(370);
+
+        });
+
+
+    </script>
+
+</head>
+<body class="form">
+
+<!--NAVBAR-->
+
+<div class="container">
+<nav class="navbar navbar-inverse">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="dashboard.html">Dashboard</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="trajectory_manager.html">Trajectory manager</a></li>
+            <li><a href="connect.html">Connection to a car</a></li>
+            <li><a href="#">Multi-View</a></li>
+            <li class="active"><a href="#">Report</a></li>
+            <li><a href="#">3D simulation</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">About VAVE<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="config.html">Configuration</a></li>
+
+                </ul>
+            </li>
+        </ul>
+        <!-- <form class="navbar-form navbar-left" role="search">
+           <div class="form-group">
+             <input type="text" class="form-control" placeholder="Search">
+           </div>
+           <button type="submit" class="btn btn-default">Submit</button>
+         </form> -->
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Log out</a></li>
+
+        </ul>
+    </div><!-- /.navbar-collapse -->
+
+</nav>
+
+<!--END OF NAVBAR-->
+
+
+
+<div class="box">
+<div class="row"  id="form" style="display:none;">
+
+<div class="col-lg-8 col-lg-offset-2">
+<div class="page-header">
+    <h2>Report generation form</h2>
+</div>
+<p style="color:white;">Please complete all the fields bellow</p>
+<br>
+
+
+
+
+<!--Analyser's informations-->
+
+<form id="interviewForm" method="post" class="form-horizontal" >
+
+<h3>Analyser's informations</h3>
+
+<div class="well well-sm">
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Firstname</label>
+        <div class="col-lg-3">
+            <input type="text" name="firstname" value="" placeholder=" " >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Lastname</label>
+        <div class="col-lg-3">
+            <input type="text" name="lastname" value="" placeholder=" " >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Select a car</label>
+        <div class="col-lg-3">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="cars[]" value="mycar" /> My car
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="cars[]" value="traxxas1" /> Traxxas 1
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="cars[]" value="traxxas2" /> Traxxas 2
+                </label>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<br>
+
+
+
+
+
+<!--Files uploading-->
+
+
+
+<h3>Files uploading</h3>
+<div class="well well-sm">
+    <div class="form-group">
+        <label class="col-md-3 control-label">INS data
+            <!-- <div class="image">
+             <img id="question" src="aiga-information.png" width="15px">
+             <span>max size: 3Mo</span>
+             </div> -->
+        </label>
+
+        <div class="col-sm-1">
+            <input type="file" title="Browse">
+
+            <!-- <div class="bar">
+                     <div class="progress progress-striped">
+                     <div class="progress-bar" style="width: 60%;">
+                       <span class="sr-only">60% Complete</span>
+                        </div>
+                         </div>
+             </div>-->
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">GPS data (.csv)</label>
+        <div class="col-sm-1">
+            <input type="file" title="Browse">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">GPS data (.ubx)</label>
+        <div class="col-sm-1" style="">
+            <input type="file" title="Browse">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-3 control-label">video</label>
+        <div class="col-sm-1">
+            <input type="file" title="Browse">
+        </div>
+    </div>
+</div>
+
+
+<br>
+
+
+
+
+
+
+
+<!--Additional informations-->
+
+<h3>Additional informations</h3>
+<div class="well well-sm">
+    <div class="form-group">
+        <label class="col-md-3 control-label">Date</label>
+        <div class="col-lg-3">
+            <input type="text" class="span1" name="date" value="" id="dp2" placeholder=" Click to choose the date">
+        </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Location</label>
+
+        <div class="col-lg-3">
+            <input type="text" name="place" value="" placeholder="   Enter the city" >
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Description</label>
+
+        <div class="col-lg-3" id="description">
+            <textarea class="form-control" rows="4" name="desc" style="width:330px; height:80px;" placeholder="Please write a short description"></textarea>
+        </div>
+    </div>
+</div>
+
+
+
+<br>
+
+
+
+
+<!--Analysis-->
+
+<h3>Analysis</h3>
+<div class="well well-sm">
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Select an analysis type</label>
+        <div class="col-lg-3">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="analysis[]" value="raw" id="raw"  /> Raw data analysis
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="analysis[]" value="algo" id="algo" /> Algorithm analysis
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--Algorithm selection, hidden by display.js-->
+
+    <div class="form-group" id="hidden_form" style="display:none;">
+        <label class="col-lg-3 control-label">Select an algorithm</label>
+        <div class="col-lg-3">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="algo" value="mycar" /> Algorithm 1
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="algo" value="traxxas1"/> Algorithm 2
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="algo" value="traxxas1"/> Algorithm 3
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div class="form-group" style="margin-left:-12px;">
+    <div class="col-md-9">
+        <button type="submit" class="btn btn-primary">Generate report</button>
+
+
+
+    </div>
+
+</div>
+
+</form>
+
+<hr>
+<br></br>
+
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+<iframe id="iframe" src="comments.html" height="51%" width="40%"  style=""> </iframe>
+
+</div>
+<footer class="footer"><p><img src="pictures/lassena.png" align="right" width="200px"></p></footer>
+
+
+
+
+
+
+
+
+
+<!--js files import (MUST BE AT THE END OF THE CODE)-->
+
+<script type="text/javascript">$('input[type=file]').bootstrapFileInput();
+$('.file-inputs').bootstrapFileInput();</script>
+
+<script type="text/javascript">$('.datepicker').datepicker()
+</script>
+<!--<script src="form/display.js"></script>-->
+<script src="form/validator.js"></script>
+<script src="form/date.js"></script>
+<script src="form/slide.js"></script>
+
+
+
+</body>
+</html>
