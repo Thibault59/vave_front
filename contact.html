@@ -1,0 +1,107 @@
+
+<!--For design reasons, I decided to "mix" the Bootstrap css v3.1.1 with the Booststrap css v2.3.2.
+ For instance, I used the v2.3.2 buttons, and the v3.1.1 navbar.
+
+So, the .css file you'll find in the Bootstrap-v3 folder is modified, don't loose it ! -->
+
+
+<! DOCTYPE html>
+<html>
+<head>
+    <title>Contact us</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-v3/css/bootstrap.css"/>
+    <link rel="stylesheet" href="formhelper/dist/css/bootstrap-formhelpers.css"/>
+    <link rel="stylesheet" href="CSS/stylesheets/styles.css"/>
+
+    <script type="text/javascript" src="formhelper/dist/js/bootstrap-formhelpers.js"></script>
+    <script src="Chart.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="bootstrap-v3/js/bootstrap.js"></script>
+
+
+
+
+</head>
+<body class="index">
+<!--BARRE DE NAVIGATION-->
+<div class="container">
+    <nav class="navbar navbar-inverse">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-inner">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"  href="#">Dashboard</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="trajectory_manager.html">Trajectory manager</a></li>
+                <li><a href="connect.html">Connection to a car</a></li>
+                <li><a href="#">Multi-View</a></li>
+                <li><a href="form.html">Report</a></li>
+                <li><a href="#">3D simulation</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About VAVE<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Readme</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="config.html">Configuration</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+
+        </div>    <!-- /.navbar-collapse -->
+    </nav>
+    <div class="box">
+    <div class="row">
+
+        <p style="color:white;"> To know more about the LASSENA laboratory :<br></p>
+    <div class="col-sm-6">
+
+        <div class="well well-sm">
+
+    <a href="http://profs.etsmtl.ca/rlandry/lassena/accueil.asp"  target=_blank><img src="pictures/lassena.png" style="width:55%;"></a>
+    <a href="http://www.etsmtl.ca/" target=_blank><img src="pictures/ets.png" style="width:40%;"></a><br>
+     <br> </br>
+
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="well well-sm">
+    <p>
+
+        Département de génie électrique<br>
+        1100 Rue Notre Dame Ouest<br>
+        Montréal, Québec, Canada<br>
+        H3C 1K3<br>
+        Bur. : (514) 396-8506<br>
+        Fax : (514) 396-8684<br>
+        Local : A-2645<br>
+
+        <a style="color:black;" href="mailto:ReneJr.Landry@etsmtl.ca">Send us an email </a>
+    </p>
+
+           </div>
+    </div>
+
+</div>
+    </div>
+<iframe id="iframe" src="comments.html" height="51%" width="40%"  style=""> </iframe>
+<footer class="footer"><p><img src="pictures/lassena.png" align="right" width="200px"></p></footer>
+
+</div>
+
+
+
+</body>
+</html>
