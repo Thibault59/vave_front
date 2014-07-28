@@ -15,21 +15,25 @@ So, the .css file you'll find in the Bootstrap-v3 folder is modified, don't loos
 
     <link rel="stylesheet" href="bootstrap-v3/css/bootstrap.css"/>
     <link rel="stylesheet" href="CSS/stylesheets/styles.css"/>
+    <link rel="stylesheet" href="slidebar/css/component.css"/>
+   <!-- <link rel="stylesheet" href="slidebar/css/default.css"/>-->
 
-
+    <script src="slidebar/js/classie.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="bootstrap-v3/js/bootstrap.js"></script>
-
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="http://code.highcharts.com/stock/highstock.js"></script>
+    <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="js/dark-unica.js"></script>
+    <script type="text/javascript" src="graph_highstock.js"></script>
 
-
-
-
-    </script>
 
     <style type="text/css">
     #map{width:400px;height:300px;}
     </style>
+
+
 
 
 
@@ -57,7 +61,20 @@ So, the .css file you'll find in the Bootstrap-v3 folder is modified, don't loos
 
 
 
+
 <div class="container">
+
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+        <h3>Send a comment</h3>
+      <!--  <a href="#">Celery seakale</a>
+        <a href="#">Dulse daikon</a>
+        <a href="#">Zucchini garlic</a>
+        <a href="#">Catsear azuki bean</a>
+        <a href="#">Dandelion bunya</a>
+        <a href="#">Rutabaga</a>-->
+    </nav>
+
+
     <nav class="navbar navbar-inverse">
 
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -88,6 +105,8 @@ So, the .css file you'll find in the Bootstrap-v3 folder is modified, don't loos
 
                     </ul>
                 </li>
+
+                <li> <button class="btn btn-default" id="showLeft" style="margin-top:5%;">Send a comment</button></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -124,7 +143,7 @@ So, the .css file you'll find in the Bootstrap-v3 folder is modified, don't loos
                         <input type="button" value="Calculate" onclick="javascript:calculate()">
                     </form>
                 </div>
-                <div id="map-canvas" style="float:left;width:115%; height:47%"></div>
+                <div id="map_canvas" style="position:relative;padding-bottom:75%;height: 10%;overflow: hidden;width:110%;"></div>
             </div>
 
 
@@ -147,17 +166,44 @@ So, the .css file you'll find in the Bootstrap-v3 folder is modified, don't loos
                 <p style="color:white;margin-left:10%;">Fuel Consumption: </p>
             </div>
         </div>
+            <br>
+        <div class="row">
+            <div id="graph" style="height: 65%; width: 100%"></div>
+
+        </div>
 
 
 
 
     </div>
 
-    <iframe id="iframe" src="comments.html" height="51%" width="40%"  style=""> </iframe>
+   <!-- <iframe id="iframe" src="comments.html" height="51%" width="40%"  style=""> </iframe> -->
+
+    <script>
+
+        var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+                body = document.body;
+
+        showLeft.onclick = function() {
+            classie.toggle( this, 'active' );
+            classie.toggle( menuLeft, 'cbp-spmenu-open' );
+            disableOther( 'showLeft' );
+        };
+
+        function disableOther( button ) {
+            if( button !== 'showLeft' ) {
+                classie.toggle( showLeft, 'disabled' );
+            }
+        }
 
 
-    <script src="google_map.js"></script>
+    </script>
 
+
+    <script src="google_map/google_map.js"></script>
+
+
+</div>
 
 </body>
 </html>
